@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Lens & Exposure</title>
+    <link rel="stylesheet" href="loginstyle.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <div class="login-box">
+
+            <h2 class="login-title">Login</h2>
+
+            <form id="login" onsubmit="return false;">
+
+                <div class="formdesign">
+                    Username:
+                    <input type="text" id="name" placeholder="Your Name">
+                    <span id="nameerror" class="error"></span>
+                </div>
+
+                <div class="formdesign">
+                    Email:
+                    <input type="email" id="email" placeholder="Valid Email">
+                    <span id="emailerror" class="error"></span>
+                </div>
+
+                <div class="formdesign">
+                    Password:
+                    <input type="password" id="password" placeholder="Valid Password">
+                    <span id="passworderror" class="error"></span>
+                </div>
+
+                <button type="button" class="submit" onclick="confirmlogin()">Submit</button>
+            </form>
+
+            <div class="signup">
+                Not a member? <a href="signup.html">Sign Up</a>
+            </div>
+
+        </div>
+
+    </div>
+
+<script>
+function confirmlogin() {
+    document.getElementById("nameerror").textContent = "";
+    document.getElementById("emailerror").textContent = "";
+    document.getElementById("passworderror").textContent = "";
+
+    let isvalid = true;
+
+    const name = document.getElementById("name").value.trim();
+    if (name === "") {
+        document.getElementById("nameerror").textContent = "Name is required.";
+        isvalid = false;
+    }
+
+    const email = document.getElementById("email").value.trim();
+    const emailpattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    if (email === "") {
+        document.getElementById("emailerror").textContent = "Email is required.";
+        isvalid = false;
+    } else if (!emailpattern.test(email)) {
+        document.getElementById("emailerror").textContent = "Invalid email format.";
+        isvalid = false;
+    }
+
+    const password = document.getElementById("password").value.trim();
+
+    if (password === "") {
+        document.getElementById("passworderror").textContent = "Password is required.";
+        isvalid = false;
+    } else if (password.length <8) {
+        document.getElementById("passworderror").textContent = "Password must be at least 9 characters.";
+        isvalid = false;
+    }
+
+    if (isvalid) {
+        alert("Hooray! You have successfully logged in.");
+        window.location.href = "home.html";
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    font-family: baskerville old face, serif;
+    background: linear-gradient(90deg, #ff2a00, #ff8b61);
+}
+
+.signup-header {
+    text-align: center;
+    padding: 30px;
+    font-size: 30px;
+    color: black;
+}
+
+.signup-box {
+    width: 450px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 30px;
+    border: 3px solid black;
+    border-radius: 20px;
+    backdrop-filter: blur(6px);
+}
+
+.field {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.field input {
+    width: 92%;
+    padding: 8px;
+    margin-top: 8px;
+    border: 2px solid black;
+    border-radius: 8px;
+    font-size: 17px;
+}
+
+.submit-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.signup-btn {
+    width: 150px;
+    padding: 10px;
+    background: #ff7b00;
+    border: 3px solid black;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.signup-btn:hover {
+    background: black;
+    color: white;
+    transition: 0.3s;
+}
+
+.signup-btn:active {
+    background: #7fffd4;
+    color: black;
+    transition: 0.2s;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 20px;
+}
+
+.login-link a {
+    color: black;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
